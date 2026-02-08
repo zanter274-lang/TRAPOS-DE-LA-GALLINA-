@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi página</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    img {
+      width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenido</h1>
+  <p>Tu IP es:</p>
+  <h2 id="ip">Cargando...</h2>
+
+  <h3>Fotos</h3>
+<img src="IMG_8553.webp">
+<img src="IMG_8554.webp">
+<img src="IMG_8587.webp">
+<img src="IMG_9535.webp">
+<img src="IMG_9536.webp">
+<img src="IMG_9619.webp">
+
+
+  <script>
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("ip").innerText = data.ip;
+      });
+  </script>
+
+</body>
+</html>
